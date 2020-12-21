@@ -8,6 +8,10 @@
   padding: 30px 60px;
 }
 
+#header #day {
+  text-align: center;
+}
+
 #app h2 {
   padding-left: 20px;
 }

@@ -53,6 +53,7 @@ $('#btn').click(() => {
 
 class App {
   constructor(date) {
+    $('#day').html(date)
     this.getWeiboHotSearchData(date)
     this.getZhihuHotTopicData(date)
   }
