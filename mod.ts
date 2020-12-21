@@ -3,11 +3,11 @@ import { format } from "std/datetime/mod.ts";
 import { join } from "std/path/mod.ts";
 import { exists } from "std/fs/mod.ts";
 
-import type { WeiboHotSrarchWord, ZhihuHotSearchSearchWord, ZhihuHotSearchSearchTopSearch, ZhihuHotTopicQuestion, ZhihuHotTopicHotList } from "./types/types.ts";
-import { weiboMergeWords, zhihuMergeWords, mergeQuestions } from "./utils/utils.ts";
+import type { WeiboHotSrarchWord, ZhihuHotTopicQuestion, ZhihuHotTopicHotList } from "./types/types.ts";
+import { weiboMergeWords,  mergeQuestions } from "./utils/utils.ts";
 
 const weiboHotSearchURL = "https://s.weibo.com/top/summary";
-const zhihuHotSearchURL = "https://www.zhihu.com/api/v4/search/top_search";
+// const zhihuHotSearchURL = "https://www.zhihu.com/api/v4/search/top_search";
 const zhihuHotTopicURL = "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=100";
 
 const regexp = /<a href="(\/weibo\?q=[^"]+)".*?>(.+)<\/a>/g;
@@ -43,26 +43,26 @@ const weiboHotSearchQueswordsAll = weiboMergeWords(weiboWords, weiboHotSearchWor
 await Deno.writeTextFile(weiboHotSearchFullPath, JSON.stringify(weiboHotSearchQueswordsAll));
 
 // 知乎热搜
-const zhihuHotSearchResponse = await fetch(zhihuHotSearchURL);
+// const zhihuHotSearchResponse = await fetch(zhihuHotSearchURL);
 
-if (!zhihuHotSearchResponse.ok) {
-  console.error(zhihuHotSearchResponse.statusText);
-  Deno.exit(-1);
-}
+// if (!zhihuHotSearchResponse.ok) {
+//   console.error(zhihuHotSearchResponse.statusText);
+//   Deno.exit(-1);
+// }
 
-const zhihuHotSearchResult: ZhihuHotSearchSearchTopSearch = await zhihuHotSearchResponse.json();
-const words = zhihuHotSearchResult.top_search.words;
+// const zhihuHotSearchResult: ZhihuHotSearchSearchTopSearch = await zhihuHotSearchResponse.json();
+// const words = zhihuHotSearchResult.top_search.words;
 
-const zhihuHotSearchFullPath = join("zhihu-hot-search", `${yyyyMMdd}.json`);
+// const zhihuHotSearchFullPath = join("zhihu-hot-search", `${yyyyMMdd}.json`);
 
-let zhihuHotSearchWordsAlreadyDownload: ZhihuHotSearchSearchWord[] = [];
-if (await exists(zhihuHotSearchFullPath)) {
-  const content = await Deno.readTextFile(zhihuHotSearchFullPath);
-  zhihuHotSearchWordsAlreadyDownload = JSON.parse(content);
-}
+// let zhihuHotSearchWordsAlreadyDownload: ZhihuHotSearchSearchWord[] = [];
+// if (await exists(zhihuHotSearchFullPath)) {
+//   const content = await Deno.readTextFile(zhihuHotSearchFullPath);
+//   zhihuHotSearchWordsAlreadyDownload = JSON.parse(content);
+// }
 
-const zhihuHotSearchWordsAll = zhihuMergeWords(words, zhihuHotSearchWordsAlreadyDownload);
-await Deno.writeTextFile(zhihuHotSearchFullPath, JSON.stringify(zhihuHotSearchWordsAll));
+// const zhihuHotSearchWordsAll = zhihuMergeWords(words, zhihuHotSearchWordsAlreadyDownload);
+// await Deno.writeTextFile(zhihuHotSearchFullPath, JSON.stringify(zhihuHotSearchWordsAll));
 
 // 知乎热门话题
 const zhihuHotTopicResponse = await fetch(zhihuHotTopicURL);
