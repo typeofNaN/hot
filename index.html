@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.css" rel="stylesheet">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header">
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control" id="date" placeholder="选择日期">
+      </div>
+      <button class="btn btn-default" id="btn">查热搜</button>
+      <p>热搜数据从2020年12月21日开始统计</p>
+    </form>
+  </header>
+  <div id="app">
+    <div class="weibo app_item">
+      <h2>微博热搜</h2>
+      <ul id="weibo_hot_search"></ul>
+    </div>
+    <div class="zhihu app_item">
+      <h2>知乎热门话题</h2>
+      <ul id="zhihu_hot_topic"></ul>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
