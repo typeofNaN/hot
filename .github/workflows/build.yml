@@ -2,7 +2,7 @@ name: build
 
 on:
   schedule:
-    - cron: "0 0 */4 * * ? *"
+    - cron: "0 * * * *"
 
 jobs:
   build:
@@ -26,5 +26,5 @@ jobs:
           git pull --rebase
           deno run --unstable --allow-net --allow-read --allow-write --importmap=import_map.json mod.ts
           git add .
-          git commit -m "get data by github action"
+          git commit -m "get data by github actions"
           git push
