@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>热搜统计</title>
+  <title>热搜爬虫</title>
   <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
@@ -25,12 +25,20 @@
   </header>
   <div id="app">
     <div class="weibo app_item">
-      <h2>微博热搜</h2>
-      <ul id="weibo_hot_search"></ul>
+      <div class="item_box">
+        <div class="item_box_title">微博热搜</div>
+        <div class="item_box_main">
+          <ul id="weibo_hot_search"></ul>
+        </div>
+      </div>
     </div>
     <div class="zhihu app_item">
-      <h2>知乎热门话题</h2>
-      <ul id="zhihu_hot_topic"></ul>
+      <div class="item_box">
+        <div class="item_box_title">知乎热门话题</div>
+        <div class="item_box_main">
+          <ul id="zhihu_hot_topic"></ul>
+        </div>
+      </div>
     </div>
   </div>
   <script src="main.js"></script>

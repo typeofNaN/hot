@@ -78,12 +78,17 @@ class App {
     let str = ''
     list.forEach((i, index) => {
       str += `
-        <li><span>${index + 1}、</span><a href="${i.url}" target="_blank">${i.title}</a></li>
+        <li>
+          <a href="${i.url}" target="_blank">
+            <div class="li_item">
+              <div class="li_no">${index + 1}</div>
+              <p>${i.title}</p>
+            </div>
+          </a>
+        </li>
       `
     })
     document.getElementById(domId).innerHTML = str
   }
-
-  
 }
 const data = new App(today)
