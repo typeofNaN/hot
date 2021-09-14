@@ -52,6 +52,7 @@ body {
   font-size: 36px;
   background-color: #faecd8;
   color: #303133;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
 }
 
 .item_box .item_box_main {
@@ -112,6 +113,7 @@ a:visited {
 
 .li_item:hover {
   transform: translateY(-2%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
 }
 
 .li_no {
