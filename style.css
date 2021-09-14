@@ -51,6 +51,7 @@ body {
   line-height: 60px;
   font-size: 36px;
   background-color: #faecd8;
+  color: #303133;
 }
 
 .item_box .item_box_main {
@@ -90,6 +91,13 @@ li:hover {
 
 li:hover a {
   color: #E6A23C;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:link,
+a:visited {
   text-decoration: none;
 }
 

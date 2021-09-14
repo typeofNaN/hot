@@ -47,6 +47,9 @@ $('#date').datepicker({
 
 $('#btn').click(() => {
   var time = $('#date').val()
+  if (!time) {
+    return
+  }
   new App(time)
   return false
 })
