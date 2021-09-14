@@ -25,10 +25,12 @@ body {
 
 #app {
   display: flex;
+  flex-wrap: wrap;
 }
 
 #app .app_item {
   width: 50%;
+  margin-bottom: 20px;
 }
 
 .item_box {
@@ -144,4 +146,18 @@ li:nth-child(3) .li_no {
   display: flex;
   align-items: center;
   margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #app .app_item {
+    width: 100%;
+  }
+  
+  .item_box {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 90%;
+  }
+  
 }
