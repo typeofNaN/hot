@@ -1,10 +1,10 @@
-import type { ZhihuHotSearchSearchWord, WeiboHotSrarchWord, ZhihuHotTopicQuestion } from "../types/types.ts";
+import type { ZhihuHotSearchSearchWord, WeiboHotSearchWord, ZhihuHotTopicQuestion } from "../types/types.ts";
 
 /** 合并两次热门话题并根据 id 去重 */
 export function weiboMergeWords(
-  words: WeiboHotSrarchWord[],
-  another: WeiboHotSrarchWord[],
-): WeiboHotSrarchWord[] {
+  words: WeiboHotSearchWord[],
+  another: WeiboHotSearchWord[],
+): WeiboHotSearchWord[] {
   const obj: Record<string, string> = {};
   for (const w of words.concat(another)) {
     obj[w.url] = w.title;

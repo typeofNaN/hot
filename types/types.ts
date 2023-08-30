@@ -1,4 +1,4 @@
-export type WeiboHotSrarchWord = {
+export type WeiboHotSearchWord = {
   title: string;
   url: string;
 };

@@ -46,7 +46,7 @@ $('#date').datepicker({
 })
 
 $('#btn').click(() => {
-  var time = $('#date').val()
+  const time = $('#date').val()
   if (!time) {
     return
   }
@@ -57,17 +57,17 @@ $('#btn').click(() => {
 class App {
   constructor(date) {
     $('#day').html(date)
-    this.getWeiboHotSearchData(date)
+    // this.getWeiboHotSearchData(date)
     this.getZhihuHotTopicData(date)
   }
 
-  getWeiboHotSearchData(date) {
-    fetch(`./weibo-hot-search/${date}.json`)
-      .then(res => res.json())
-      .then(data => {
-        this.render(data, 'weibo_hot_search')
-      })
-  }
+  // getWeiboHotSearchData(date) {
+  //   fetch(`./weibo-hot-search/${date}.json`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.render(data, 'weibo_hot_search')
+  //     })
+  // }
 
   getZhihuHotTopicData(date) {
     fetch(`./zhihu-hot-topic/${date}.json`)
@@ -94,4 +94,4 @@ class App {
     document.getElementById(domId).innerHTML = str
   }
 }
-const data = new App(today)
+new App(today)
