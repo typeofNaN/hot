@@ -151,12 +151,12 @@ li:nth-child(3) .li_no {
   #app .app_item {
     width: 100%;
   }
-  
+
   .item_box {
     position: relative;
     margin: 0 auto;
     padding-top: 30px;
     width: 90%;
   }
-  
+
 }

@@ -12,4 +12,16 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "denoland.vscode-deno",
   },
+  "cSpell.words": [
+    "datetime",
+    "Deno",
+    "denoland",
+    "denolib",
+    "importmap",
+    "miui",
+    "scrollbars",
+    "Weibo",
+    "Yahei",
+    "Zhihu"
+  ],
 }
